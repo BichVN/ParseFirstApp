@@ -10,7 +10,6 @@
 		CF1055ED1C2B06950054C47E /* NewFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1055EC1C2B06950054C47E /* NewFeedTableViewCell.swift */; };
 		CF193D941C3309CE0059D05B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF193D921C3309CE0059D05B /* Main.storyboard */; };
 		CF19FFF81C46AE5D005657BF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF19FFF71C46AE5D005657BF /* Accounts.framework */; };
-		CF2219E71C45021400DD948D /* 55552796.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CF2219E61C45021400DD948D /* 55552796.jpeg */; };
 		CF8A17C91C2AEF0B008825B3 /* NewFeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A17C81C2AEF0B008825B3 /* NewFeedsTableViewController.swift */; };
 		CFD7CA231C42A41900E59490 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD7CA221C42A41900E59490 /* EditProfileViewController.swift */; };
 		E023470F1B677CD3004F2DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023470E1B677CD3004F2DBE /* AppDelegate.swift */; };
@@ -49,7 +48,6 @@
 		CF1055EC1C2B06950054C47E /* NewFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeedTableViewCell.swift; sourceTree = "<group>"; };
 		CF193D931C3309CE0059D05B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF19FFF71C46AE5D005657BF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		CF2219E61C45021400DD948D /* 55552796.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 55552796.jpeg; path = ../../../../../../Desktop/55552796.jpeg; sourceTree = "<group>"; };
 		CF8A17C81C2AEF0B008825B3 /* NewFeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeedsTableViewController.swift; sourceTree = "<group>"; };
 		CFD7CA221C42A41900E59490 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E02347091B677CD3004F2DBE /* ParseFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +149,6 @@
 		E023470C1B677CD3004F2DBE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CF2219E61C45021400DD948D /* 55552796.jpeg */,
 				E023470D1B677CD3004F2DBE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -281,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF193D941C3309CE0059D05B /* Main.storyboard in Resources */,
-				CF2219E71C45021400DD948D /* 55552796.jpeg in Resources */,
 				E02347191B677CD3004F2DBE /* LaunchScreen.xib in Resources */,
 				E02347161B677CD3004F2DBE /* Images.xcassets in Resources */,
 			);

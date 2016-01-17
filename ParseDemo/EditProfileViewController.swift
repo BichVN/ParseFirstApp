@@ -20,7 +20,12 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     let username = PFUser.currentUser()?.objectForKey("username") as! String
         
     userNameTextField.text = username
-    
+        if(PFUser.currentUser()?.objectForKey("avatar") != nil){
+            let userImageFile = PFUser.currentUser()?.objectForKey("avatar") as! PFFile
+            userImageFile.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?)-> Void in
+                self.profilePictureImageView.image = UIImage(data: imageData!)
+            })
+        }
     
     }
     
@@ -85,15 +90,33 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         //Display activity indicator
-        let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-r        // Edit profile the user asynchronously
-        currentUser.saveInBackgroundWithBlock({ (succeed, error) -> Void in
-            //something to do
+        //let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+       // Edit profile the user asynchronously
+        currentUser.saveInBackgroundWithBlock({ (success, error) -> Void in
+            if (error != nil){
+                let myAlert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                myAlert.addAction(okAction)
+                self.presentViewController(myAlert, animated: true, completion: nil)
+                return
+            }
+            if(success){
+                let userMessage = "Profile details successfully updated"
+                let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    
+                    })
+                })
+                myAlert.addAction(okAction)
+                self.presentViewController(myAlert, animated: true, completion: nil)
+                return
+            }
         })
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        profilePictureImageView.image = info [UIImagePickerControllerOriginalImage] as! UIImage
+        profilePictureImageView.image = info [UIImagePickerControllerOriginalImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 

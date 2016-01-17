@@ -393,8 +393,8 @@
                                     <segue destination="ZH4-VM-X9u" kind="unwind" unwindAction="unwindToLogInScreen:" id="XOK-FJ-2WT"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="55552796.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-4o-YXv">
-                                <rect key="frame" x="53" y="59" width="264" height="81"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Rd3-zD-FAJ">
+                                <rect key="frame" x="122" y="69" width="126" height="126"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -418,7 +418,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="avatarImageView" destination="jMy-4o-YXv" id="0YL-4U-RKH"/>
+                        <outlet property="avatarImageView" destination="Rd3-zD-FAJ" id="3q5-33-8G8"/>
                         <outlet property="emailField" destination="UOz-tS-XVp" id="1t9-R1-fKr"/>
                         <outlet property="passwordField" destination="Jcj-sR-Vlo" id="uQ5-VF-Gol"/>
                         <outlet property="usernameField" destination="4IT-7M-gza" id="HAt-uC-cJS"/>
@@ -582,14 +582,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDW-0n-DWb">
-                                <rect key="frame" x="20" y="78" width="128" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="Skm-qB-zrG"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be9-BC-wx2">
-                                <rect key="frame" x="186" y="105" width="153" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be9-BC-wx2">
+                                <rect key="frame" x="186" y="127" width="153" height="30"/>
                                 <state key="normal" title="Change profile picture"/>
                                 <connections>
                                     <action selector="chooseAvatar:" destination="r1g-O0-nNk" eventType="touchUpInside" id="9dx-3L-xS7"/>
@@ -620,20 +614,18 @@
                                     <action selector="saveChangeButtonTapped:" destination="r1g-O0-nNk" eventType="touchUpInside" id="w27-wZ-cGc"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-Bf-QTg">
+                                <rect key="frame" x="17" y="80" width="126" height="126"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lDW-0n-DWb" firstAttribute="centerY" secondItem="Be9-BC-wx2" secondAttribute="centerY" id="8y1-dC-P6q"/>
                             <constraint firstItem="TBB-H1-i83" firstAttribute="top" secondItem="rWL-uv-Tn9" secondAttribute="bottom" constant="60" id="BZ5-LD-2cF"/>
                             <constraint firstItem="2qb-7n-tm9" firstAttribute="leading" secondItem="QNy-49-f7T" secondAttribute="leadingMargin" constant="35" id="E1h-rt-cZP"/>
                             <constraint firstItem="rWL-uv-Tn9" firstAttribute="leading" secondItem="2qb-7n-tm9" secondAttribute="leading" id="GoY-OB-hR2"/>
                             <constraint firstItem="rWL-uv-Tn9" firstAttribute="top" secondItem="2qb-7n-tm9" secondAttribute="bottom" constant="23" id="TOF-K5-Ac7"/>
                             <constraint firstItem="TBB-H1-i83" firstAttribute="centerX" secondItem="QNy-49-f7T" secondAttribute="centerX" id="UfA-1w-sO1"/>
-                            <constraint firstItem="2qb-7n-tm9" firstAttribute="top" secondItem="lDW-0n-DWb" secondAttribute="bottom" constant="66" id="c6J-rY-gDu"/>
-                            <constraint firstItem="lDW-0n-DWb" firstAttribute="top" secondItem="gRF-ik-jrz" secondAttribute="bottom" constant="58" id="l78-vU-rs3"/>
                             <constraint firstItem="2qb-7n-tm9" firstAttribute="top" secondItem="QNy-49-f7T" secondAttribute="top" constant="227" id="o6z-fo-bBC"/>
-                            <constraint firstItem="Be9-BC-wx2" firstAttribute="leading" secondItem="lDW-0n-DWb" secondAttribute="trailing" constant="38" id="o7S-sh-J3e"/>
-                            <constraint firstItem="lDW-0n-DWb" firstAttribute="leading" secondItem="QNy-49-f7T" secondAttribute="leadingMargin" constant="4" id="tgU-rH-fiH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="F6W-0P-vbo">
@@ -647,7 +639,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="passwordTextField" destination="rWL-uv-Tn9" id="qNJ-yM-iGg"/>
-                        <outlet property="profilePictureImageView" destination="lDW-0n-DWb" id="sfA-hy-osl"/>
+                        <outlet property="profilePictureImageView" destination="hbb-Bf-QTg" id="iEI-vw-baO"/>
                         <outlet property="userNameTextField" destination="2qb-7n-tm9" id="otq-h3-gKd"/>
                     </connections>
                 </viewController>
@@ -698,8 +690,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="55552796.jpeg" width="500" height="375"/>
         <image name="bar" width="300" height="20"/>
         <image name="close" width="64" height="64"/>
+        <image name="user" width="126" height="126"/>
     </resources>
 </document>

@@ -91,7 +91,7 @@ class NewFeedsTableViewController: UITableViewController {
         let post:PFObject = self.timelineData.objectAtIndex(indexPath.row) as! PFObject
         cell.postTextView.alpha = 0
         cell.timestampLabel.alpha = 0
-        //cell.usernameLabel.alpha = 0
+        cell.usernameLabel.alpha = 0
         
         cell.postTextView.text = post.objectForKey("content") as! String
         
@@ -99,8 +99,8 @@ class NewFeedsTableViewController: UITableViewController {
         dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         cell.timestampLabel.text = dataFormatter.stringFromDate(post.createdAt!)
         
-        //let findUser = PFQuery(className: "User")
-        //findUser.whereKey("objectId", equalTo: String(post.objectForKey("user")!.objectId))
+        let findUser = PFQuery(className: "User")
+        findUser.whereKey("objectId", equalTo: String(post.objectForKey("user")!.objectId))
         
         
         //let findOwer = PFQuery(className: "Posts")

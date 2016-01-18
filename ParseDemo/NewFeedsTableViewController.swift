@@ -99,34 +99,15 @@ class NewFeedsTableViewController: UITableViewController {
         dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         cell.timestampLabel.text = dataFormatter.stringFromDate(post.createdAt!)
         
-        let findUser = PFQuery(className: "User")
-        findUser.whereKey("objectId", equalTo: String(post.objectForKey("user")!.objectId))
+        cell.usernameLabel.text = (post.objectForKey("user") as! PFUser).username
         
-        
-        //let findOwer = PFQuery(className: "Posts")
-        //findUser!.whereKey("objectId", matchesKey: "user", inQuery: findOwer)
-        /*let findUser = PFQuery(className: "User")
-        findUser.whereKey("objectId", equalTo: "S67Ix5AFAR")
-        findUser.findObjectsInBackgroundWithBlock {
-            (objects:[AnyObject]!, error: NSError!) -> Void in
-            
-            if error == nil{
-                let user:PFUser = (objects! as NSArray).lastObject as! PFUser
-                cell.usernameLabel.text = user.username
-        UIView.animateWithDuration(0.5, animations: {
-        cell.postTextView.alpha = 1
-        cell.timestampLabel.alpha = 1
-        cell.usernameLabel.alpha = 1
-        })
-        
-        }
-        }*/
         UIView.animateWithDuration(0.5, animations: {
             cell.postTextView.alpha = 1
             cell.timestampLabel.alpha = 1
             cell.usernameLabel.alpha = 1
         })
-        return cell
+        
+    return cell
     }
 
     /*

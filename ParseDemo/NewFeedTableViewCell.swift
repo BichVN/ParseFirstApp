@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Parse
 
 class NewFeedTableViewCell: UITableViewCell {
 
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var timestampLabel: UILabel!
     @IBOutlet var postTextView: UITextView!
+    @IBOutlet weak var commentTextView: UITextView!
     
+    @IBAction func commentTappedAction(sender: AnyObject) {
+        let comment:PFObject = PFObject(className: "Comment")
+        comment["content"] = commentTextView.text
+        comment["user"] = PFUser.currentUser()
+        comment.saveInBackground()
+    }
     override init(style: UITableViewCellStyle,
         reuseIdentifier: String?){
             super.init(style: style, reuseIdentifier: reuseIdentifier)

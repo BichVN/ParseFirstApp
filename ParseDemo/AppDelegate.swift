@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         // Initialize Parse.
-        Parse.setApplicationId("aE5uhciSjLLMaoWfqsvE42VFJxCpLL2HqrqIWIcX", clientKey: "93NEjtCWCIG2W8jNn3Lze7GDGq0EDAL3cSbBHwVj")
+        Parse.setApplicationId("QqXdaGwAnVTjSlglkiNMJZUx5C5N43yYdiRb8Q1r", clientKey: "ZeUfZz65Uu1NquUmjLJDdSpSFQ7VgjC2SEzJudke")
         
         
         // [Optional] Track statistics around application opens.

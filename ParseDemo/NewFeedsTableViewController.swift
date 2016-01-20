@@ -34,7 +34,7 @@ class NewFeedsTableViewController: UITableViewController {
     @IBAction func loadData(){
         timelineData.removeAllObjects()
         
-        let findTimelineData = PFQuery(className: "Posts")
+        let findTimelineData = PFQuery(className: "Post")
         findTimelineData.findObjectsInBackgroundWithBlock {
             (objects:[AnyObject]?, error: NSError?) -> Void in
             
@@ -99,7 +99,7 @@ class NewFeedsTableViewController: UITableViewController {
         dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         cell.timestampLabel.text = dataFormatter.stringFromDate(post.createdAt!)
         
-        cell.usernameLabel.text = (post.objectForKey("user") as! PFUser).username
+        cell.usernameLabel.text = (post.objectForKey("user")?.fetchIfNeeded() as! PFUser).username
         
         UIView.animateWithDuration(0.5, animations: {
             cell.postTextView.alpha = 1
@@ -110,6 +110,7 @@ class NewFeedsTableViewController: UITableViewController {
     return cell
     }
 
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
